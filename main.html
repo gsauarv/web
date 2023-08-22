@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<link rel = "stylesheet"
+    type = "text/css"
+    href = "main.css" />
+<script type = "text/javascript" src = "main.js"></script>
+<title>Futronic FTRAPI/ANSI SDK Example</title>
+</head>
+
+<body onload = "onBodyLoad()">
+<div id="AppContainer">
+<h1>Futronic FTRAPI/ANSI SDK Example</h1>
+<div id="header">
+<p>
+<img src = "bunner.png"/>
+</p>
+</div>
+
+<div id="controls">
+
+<div id="buttons">
+<form action = "">
+    <input type = "button" value = "Enroll FTRAPI(Template)" class="buttonLeft" id="EnrollBtnFTRAPI" disabled onclick="beginOperation('enroll', 'ftrapi', true)"/>
+    <input type = "button" value = "Enroll FTRAPI(Sample)" class="buttonLeft" id="EnrollIdnBtnFTRAPI" disabled onclick="beginOperation('enroll', 'ftrapi', false)"/>
+    <input type = "button" value = "Enroll ANSI Sdk" class="buttonLeft"  id="EnrollBtnANSI"   disabled onclick="beginOperation('enroll', 'ansisdk', false)"/>
+    <input type = "button" value = "Capture Frame"   class="buttonLeft"  id="CaptureBtn"      disabled onclick="beginOperation('capture', 'ansisdk', false)"/>
+    <input type = "button" value = "Cancel"          class="buttonLeft" id="CancelBtn"       disabled onclick="cancelOperation()" />
+</form>
+</div>
+
+<div id="operationParams">
+<form action = "">
+    <input type="checkbox" name="isoconv" value="0" id="ConvIsoCheckBox">Convert ANSI to ISO<br>
+    Samples in FTRAPI template: <input type="number" class="controlList"id="sampleNumList" value="5"/>
+</form>
+</div>
+
+</div>
+
+<div id="image">
+<canvas id="fingerframe" height="480" width="320"></canvas>
+</div>
+
+<div id="footer">
+<p id="result"></p>
+</div>
+<div id="resultLinks">
+<a id="resultLink" href="http://www.futronic-tech.com" rel="external" media="application/octet-stream">
+www.futronic-tech.com
+</a>
+</div>
+
+</div>
+
+</body>
+
+</html>
